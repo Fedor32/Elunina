@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4">Тестовое задание</h1>
+                <p class="lead">
+                    Реализовать на Symfony простую форму(через стандартный FormType) с текстовыми полями : firstname, lastname, description. <br/>
+                    Поля формы должны по разному "переводиться", в зависимости от какого-нибудь параметра в .env
+                    Нужно сделать 3 варианта перевода : ru, en, ru2
+
+                    В варианте ru2, прописать значения :<br/>
+                    firstname : "Как звать", lastname : "Чей будешь", description : "Расскажи еще чего-то"
+                </p>
+                <hr class="my-4">
+                <p>Параметр, используемый для определения языка - <strong>APP_LANGUAGE</strong>
+                    Сейчас установлено значение - <strong>{{ current_language }}</strong>
+                </p>
+                <a href="https://github.com/Fedor32/Elunina.git" target="_blank">Ссылка на репозиторий</a>
+            </div>
+            {% block body %}{% endblock %}
+            <footer class="my-5 pt-5 text-muted text-center text-small">
+                <p class="mb-1">© {{ 'now' | date('Y') }} Company Name</p>
+            </footer>
+        </div>
+    </body>
+</html>

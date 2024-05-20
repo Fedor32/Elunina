@@ -1,0 +1,9 @@
+Options -Indexes
+
+RewriteEngine On
+
+RewriteRule ^_wdt/(.*)$ public/index.php [L]
+RewriteRule ^_profiler/(.*)$ public/index.php [L]
+
+RewriteCond %{REQUEST_URI} !public/
+RewriteRule (.*) /public/$1 [L]
